@@ -1,6 +1,15 @@
 import 'dart:convert';
-
+import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:shelf/shelf.dart';
+
+String token(String user, String password) {
+  final key = base64Encode(utf8.encode(password + user));
+  final payload = {
+    'usr': user,
+  };
+  final jwt = JWT(payload);
+  return jwt.sign(SecretKey(key));
+}
 
 Response routeLanding(Request req) {
   final payload = jsonEncode({'message': 'Hello world', 'status': 199});
@@ -8,7 +17,7 @@ Response routeLanding(Request req) {
 }
 
 Response routeAdminGet(Request req) {
-  final payload = jsonEncode({'message': 'Hello world', 'status': 203});
+  final payload = jsonEncode({'token': token('niko', 'root')});
   return Response.ok(payload, headers: {'content-type': 'application/json'});
 }
 
