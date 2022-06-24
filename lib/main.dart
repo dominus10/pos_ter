@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pos_ter/routes/navRoutes.dart';
-import 'package:pos_ter/view/login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // var box = await Hive.openBox('test');
   runApp(const MyApp());
 }
 
@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
       routes: routes(),
     );
   }
 }
-
