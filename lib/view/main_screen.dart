@@ -17,27 +17,59 @@ class _MainScreenUserState extends State<MainScreenUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text('data'),
-                Spacer(),
-                SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                  child: IconButton(
-                    splashRadius: 20,
-                    padding: const EdgeInsets.all(0),
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.settings,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Text("Hello Admin!"),
+                  const Spacer(),
+                  SizedBox(
+                    width: 40.0,
+                    height: 40.0,
+                    child: IconButton(
+                      splashRadius: 20,
+                      padding: const EdgeInsets.all(0),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.settings,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 2 - 5,
+                        height: MediaQuery.of(context).size.width / 4,
+                        child: const Card(
+                          child: Text('Reservation'),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 2 - 5,
+                        height: MediaQuery.of(context).size.width / 4,
+                        child: const Card(
+                          child: Text('Problem'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 2 - 5,
+                    height: MediaQuery.of(context).size.width / 2,
+                    child: const Card(
+                      child: Text('Undelivered Order'),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
