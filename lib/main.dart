@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pos_ter/routes/navRoutes.dart';
+import 'package:pos_ter/routes/nav_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
