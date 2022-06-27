@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pos_ter/routes/nav_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // var box = await Hive.openBox('test');
+  // var box =
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.bottom]);
   runApp(const MyApp());
 }
 

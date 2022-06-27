@@ -43,6 +43,10 @@ class _MainScreenUserState extends State<MainScreenUser> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _handleSelectedIndex,
