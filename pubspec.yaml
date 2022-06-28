@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  carousel_slider: ^4.1.1
   crypto: ^3.0.2
   dart_jsonwebtoken: ^2.4.1
   hive: any

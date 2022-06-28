@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_ter/view/outstanding_popup.dart';
 import 'package:pos_ter/view/reservation_popup.dart';
@@ -31,23 +32,53 @@ class MainScreen0 extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
-          height: 50,
-          child: ElevatedButton(
-            onPressed: () {},
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.add,
-                  color: Colors.white,
+        Row(
+          children: [
+            Card(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width / 2 - 13,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        'Add New Reservation',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ),
-                Text(
-                  'Add New Reservation',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+              ),
             ),
-          ),
+            Card(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width / 2 - 13,
+                height: 60,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue)),
+                  onPressed: () {},
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        'New Customer',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         Row(
           children: [
@@ -104,18 +135,15 @@ class MainScreen0 extends StatelessWidget {
                               child: SingleChildScrollView(
                                 physics: const NeverScrollableScrollPhysics(),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     for (var i in List.generate(
                                         8, (index) => index + 1))
                                       SizedBox(
                                         width: double.infinity,
                                         height: 35,
-                                        child: Card(
-                                          child: Center(
-                                            child: Text(
-                                              '+6281${Random().nextInt(1000000000)}',
-                                            ),
-                                          ),
+                                        child: Text(
+                                          '+6281${Random().nextInt(1000000000)}',
                                         ),
                                       ),
                                   ],
@@ -214,34 +242,40 @@ class MainScreen0 extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width - 5,
           height: MediaQuery.of(context).size.width / 3 * 1.65,
-          child: MaterialButton(
-            padding: const EdgeInsets.all(0),
-            onPressed: () {
-              showModalBottomSheet(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  context: context,
-                  builder: (BuildContext context) {
-                    return ReservationPopup(context: context);
-                  },
-                  isScrollControlled: true);
-            },
-            child: Card(
-              child: SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: Padding(
+          child: Card(
+            child: SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Padding(
                   padding: smallPadding,
-                  child: const Text(
-                    'Table Available',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-              ),
+                  child: Column(
+                    children: [
+                      const Text(
+                        'Promotion',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      CarouselSlider(
+                        options: CarouselOptions(height: 180.0),
+                        items: [1, 2, 3, 4, 5].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration: BoxDecoration(color: Colors.amber),
+                                child: Center(
+                                  child: Text(
+                                    'text $i',
+                                    style: TextStyle(fontSize: 16.0),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  )),
             ),
           ),
         ),

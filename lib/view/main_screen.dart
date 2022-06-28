@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pos_ter/view/main_screen_0.dart';
 
+import 'main_screen_2.dart';
+
 class MainScreenUser extends StatefulWidget {
   const MainScreenUser({Key? key}) : super(key: key);
 
@@ -29,9 +31,7 @@ class _MainScreenUserState extends State<MainScreenUser> {
       Container(
         width: MediaQuery.of(context).size.width,
       ),
-      Container(
-        width: MediaQuery.of(context).size.width,
-      )
+      MainScreen2(context: context),
     ];
 
     return Scaffold(
@@ -43,10 +43,6 @@ class _MainScreenUserState extends State<MainScreenUser> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _handleSelectedIndex,
@@ -57,7 +53,7 @@ class _MainScreenUserState extends State<MainScreenUser> {
           ),
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Order'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.attach_money_outlined), label: 'Payment'),
+              icon: Icon(Icons.attach_money_outlined), label: 'Bill'),
         ],
       ),
     );
