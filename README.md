@@ -9,6 +9,14 @@ A Flutter POS App (**Appver. 0.0.1**)
 
 - [x] Hive v2.2.2
 
+- [x] For Server - Mongo_Dart v0.7.4+1 
+
+- [x] For Server - MongoDB v5.0.8
+
+### Dev Dependencies:
+
+- [x] For Server - MongoDB Compass v1.3.1.3
+
 ### Roadmap
 
 - [x] **General - Login Screen**
