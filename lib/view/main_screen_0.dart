@@ -137,6 +137,7 @@ class MainScreen0 extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
+                                    // ignore: unused_local_variable
                                     for (var i in List.generate(
                                         8, (index) => index + 1))
                                       SizedBox(
@@ -261,12 +262,14 @@ class MainScreen0 extends StatelessWidget {
                             builder: (BuildContext context) {
                               return Container(
                                 width: MediaQuery.of(context).size.width,
-                                margin: EdgeInsets.symmetric(horizontal: 5.0),
-                                decoration: BoxDecoration(color: Colors.amber),
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration:
+                                    const BoxDecoration(color: Colors.amber),
                                 child: Center(
                                   child: Text(
                                     'text $i',
-                                    style: TextStyle(fontSize: 16.0),
+                                    style: const TextStyle(fontSize: 16.0),
                                   ),
                                 ),
                               );

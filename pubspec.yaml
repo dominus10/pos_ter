@@ -17,6 +17,7 @@ dependencies:
   dart_jsonwebtoken: ^2.4.1
   hive: any
   hive_flutter: any
+  mongo_dart: ^0.7.4+1
   path_provider: any
   path: any
   provider: ^6.0.0

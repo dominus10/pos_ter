@@ -11,7 +11,7 @@ class OutstandingPopup extends StatefulWidget {
 class _OutstandingPopupState extends State<OutstandingPopup> {
   @override
   Widget build(context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.9,
       child: Padding(
         padding: const EdgeInsets.all(5),
@@ -23,7 +23,7 @@ class _OutstandingPopupState extends State<OutstandingPopup> {
             ),
             for (var i in List.generate(5, (index) => index + 1))
               Column(
-                children: [Text(i.toString()), Divider()],
+                children: [Text(i.toString()), const Divider()],
               )
           ],
         ),
