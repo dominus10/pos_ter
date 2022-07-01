@@ -9,4 +9,4 @@ final Map mongoParam = {
 final jsonHeaders = {'content-type': 'application/json'};
 final String uriString =
     'mongodb://${mongoParam["host"]}:${mongoParam["port"]}/${mongoParam["database"]}';
-final key = 'p057Er';
+const String key = 'p057Er';
