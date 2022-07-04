@@ -12,7 +12,7 @@ Future<Response> loginPost(Request req) async {
   List<Map> qRes = [];
   final db = Db(uriString);
   await db.open();
-  var query = db.collection('testbed');
+  DbCollection query = db.collection('testbed');
   //-----
   await query
       .find(where.eq('user', username).eq('password', password))
