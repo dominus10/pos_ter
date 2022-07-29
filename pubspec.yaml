@@ -11,10 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
-=======
-
->>>>>>> 0dab0e47109352cea63a5b819a375998165cc393
   carousel_slider: ^4.1.1
   crypto: ^3.0.2
   dart_jsonwebtoken: ^2.4.1
