@@ -1,61 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:pos_ter/view/main_screen_0.dart';
+import 'package:pos_ter/view/main_screen_home.dart';
 
-class MainScreenUser extends StatefulWidget {
-  const MainScreenUser({Key? key}) : super(key: key);
-
-  @override
-  State<MainScreenUser> createState() => _MainScreenUserState();
-}
-
-class _MainScreenUserState extends State<MainScreenUser> {
-  int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  void _handleSelectedIndex(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+class MainScreen extends StatelessWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> screens = [
-      MainScreen0(context: context),
-      Container(
-        width: MediaQuery.of(context).size.width,
-      ),
-      Container(
-        width: MediaQuery.of(context).size.width,
-      )
+    int selectedIndex = 0;
+    List widgetList = [
+      const MainScreenHome(),
+      Container(),
+      Container(),
     ];
 
+    void btmNavTap(int index) {
+      selectedIndex = index;
+    }
+
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: SingleChildScrollView(
-            child: screens.elementAt(_selectedIndex),
+      body: widgetList.elementAt(selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(onTap: btmNavTap, items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_filled),
+          activeIcon: Icon(
+            Icons.home_filled,
+            color: Colors.black,
           ),
+          label: 'HOME',
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _handleSelectedIndex,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Order'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.attach_money_outlined), label: 'Payment'),
-        ],
-      ),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.account_box), label: 'ACCOUNT'),
+      ]),
     );
   }
 }
