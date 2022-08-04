@@ -19,7 +19,7 @@ A Flutter POS App (**Appver. 0.0.1**)
 
 ### Roadmap
 
-- [x] **General - Login Screen**
+- [ ] **General - Login Screen (rollback) **
 
 - [x] **User - Main Screen**
 
